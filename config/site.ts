@@ -1,4 +1,4 @@
 export const siteConfig = {
-  title: "FarenX",
+  title: "FarenX - CRM",
   description: "Camban FarenX",
 };
