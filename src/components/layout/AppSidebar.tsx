@@ -1,6 +1,6 @@
 "use client"
 
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import { Home, Inbox, Search, Settings } from "lucide-react";
 
 import {
   Sidebar,
@@ -43,7 +43,7 @@ export function AppSidebar() {
   console.log(pathname)
   return (
     <Sidebar className="border-red-700">
-      <SidebarContent className="mt-12 bg-black-700">
+      <SidebarContent className="pt-12 bg-black-700">
         <SidebarGroup>
           <SidebarGroupLabel className="text-black-200 text-base">
             Application
@@ -51,10 +51,12 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
-                <SidebarMenuItem 
+                <SidebarMenuItem
                   key={item.title}
                   className={`text-black-200 hover:bg-black-400 ${
-                    item.url === pathname ? "bg-black-700" : ""
+                    item.url === pathname
+                      ? "bg-red-700 text-white font-bold rounded-md"
+                      : "font-bold rounded-md"
                   }`}
                 >
                   <SidebarMenuButton asChild>

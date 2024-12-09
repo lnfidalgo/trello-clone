@@ -13,9 +13,9 @@ export default function OganizationLayout({
       <AuthProviderLocal>
     <SidebarProvider>
       <AppSidebar />
-      <main className="pt-20 md:pt-24 px-4 flex max-w-6xl 2xl:max-w-screen-xl">
-        <SidebarTrigger className="" />
-        <div>{children}</div>
+      <main className="pt-20 md:pt-24 w-full pl-1 gap-4 flex max-w-6xl 2xl:max-w-screen-xl bg-red-200">
+        <SidebarTrigger />
+       {children}
       </main>
         </SidebarProvider>
       </AuthProviderLocal>

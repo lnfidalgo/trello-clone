@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import Marca from "@/components/ux/marca.svg";
 import { FaPlus } from "react-icons/fa6";
+import { FormPopover } from "../forms/FormPopover";
 
 export default function Navbar() {
   return (
@@ -10,18 +11,22 @@ export default function Navbar() {
         <div className="bg-black w-28 h-7 flex items-center justify-center">
           <Image src={Marca} priority alt="Marca da emrpesa FarenX" />
         </div>
-        <Button
-          size={"sm"}
-          className="hidden md:block bg-red-800 hover:bg-red-600 h-auto py-1.5 px-2 rounded-sm"
-        >
-          Criar
-        </Button>
-        <Button
-          size={"sm"}
-          className="block md:hidden bg-red-800 h-auto py-1.5 px-2 rounded-sm"
-        >
-          <FaPlus />
-        </Button>
+        <FormPopover align="start" side="bottom" sideOffset={18}>
+          <Button
+            size={"sm"}
+            className="hidden md:block bg-red-800 hover:bg-red-600 h-auto py-1.5 px-2 rounded-sm"
+          >
+            Criar
+          </Button>
+        </FormPopover>
+        <FormPopover>
+          <Button
+            size={"sm"}
+            className="block md:hidden bg-red-800 h-auto py-1.5 px-2 rounded-sm"
+          >
+            <FaPlus />
+          </Button>
+        </FormPopover>
       </div>
     </nav>
   );
