@@ -40,7 +40,6 @@ const items = [
 
 export function AppSidebar() {
   const pathname=usePathname()
-  console.log(pathname)
   return (
     <Sidebar className="border-red-700">
       <SidebarContent className="pt-12 bg-black-700">

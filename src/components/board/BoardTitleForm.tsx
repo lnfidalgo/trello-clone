@@ -17,12 +17,12 @@ export const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
   const { toast } = useToast();
   const { execute } = useAction(updateBoard, {
     onSuccess: (data) => {
-      toast({ title: `Board "${data.title}" updated!` });
+      toast({ title: `Board "${data.title}" atualizado!` });
       setTitle(data.title);
       disableEditing();
     },
     onError: (error) => {
-      toast({ title: error });
+      toast({ title: error, variant: "destructive" });
     },
   });
 
@@ -69,7 +69,7 @@ export const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
           id="title"
           onBlur={onBlur}
           defaultValue={title}
-          className="text-lg font-bold px-[7px] py-1 h-7 bg-transparent focus-visible:outline-none focus-visible:ring-transparent border-none"
+          className="text-lg font-bold px-[7px] py-1 h-7 bg-transparent focus-visible:outline-none focus-visible:text-lg focus-visible:ring-transparent border-none"
         />
       </form>
     );

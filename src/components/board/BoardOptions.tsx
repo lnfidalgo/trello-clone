@@ -22,7 +22,7 @@ export const BoardOptions = ({ id }: BoardOptionsProps) => {
   const { toast } = useToast();
   const { execute, isLoading } = useAction(deleteBoard, {
     onError: (error) => {
-      toast({ title: error });
+      toast({ title: error, variant: "destructive" });
     },
   });
 
@@ -39,7 +39,7 @@ export const BoardOptions = ({ id }: BoardOptionsProps) => {
       </PopoverTrigger>
       <PopoverContent className="px-0 pt-3 pb-3" side="bottom" align="start">
         <div className="text-sm font-medium text-center text-neutral-600 pb-3">
-          Board actions
+          Ações
         </div>
         <Separator className="mb-1" />
         <PopoverClose asChild>
@@ -57,7 +57,7 @@ export const BoardOptions = ({ id }: BoardOptionsProps) => {
           className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm text-red-500 hover:bg-red-50 hover:text-red-600"
         >
           <div className="flex items-center justify-between w-full">
-            <div>Delete this board</div>
+            <div>Deletar Board</div>
             <div>
               <Trash2 className="h-4 w-4" />
             </div>

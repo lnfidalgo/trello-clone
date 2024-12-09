@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { Check, Loader2 } from "lucide-react";
 import { useFormStatus } from "react-dom";
@@ -39,7 +38,7 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
           console.error("Failed to get images from Unsplash");
         }
       } catch (error) {
-        console.log(error);
+        console.error(error);
         setImages(defaultImages);
       } finally {
         setIsLoading(false);
@@ -93,13 +92,6 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
                 <Check className="h-4 w-4 text-white" />
               </div>
             )}
-            <Link
-              href={image.links.html}
-              target="_blank"
-              className="opacity-0 group-hover:opacity-100 absolute bottom-0 w-full text-[10px] truncate text-white hover:underline p-1 bg-black/50"
-            >
-              {image.user.name}
-            </Link>
           </div>
         ))}
       </div>

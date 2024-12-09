@@ -3,16 +3,15 @@ import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 import { BoardNavbar } from "@/components/board/BoardNavbar";
 
-
 export async function generateMetadata({
   params,
 }: {
   params: { boardId: string };
 }) {
-
+  const { boardId } = await params;
   const board = await db.board.findUnique({
     where: {
-      id: params.boardId,
+      id: boardId,
     },
   });
 
@@ -21,17 +20,17 @@ export async function generateMetadata({
   };
 }
 
-const BoardIdLayout = async ({
+export default async function BoardIdLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
   params: { boardId: string };
-}) => {
-  console.log("OOOOIII", params)
+}) {
+  const { boardId } = await params;
   const board = await db.board.findUnique({
     where: {
-      id: params.boardId,
+      id: boardId,
     },
   });
 
@@ -49,6 +48,4 @@ const BoardIdLayout = async ({
       <main className="relative pt-28 h-full">{children}</main>
     </div>
   );
-};
-
-export default BoardIdLayout;
+}

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-cognito-identity-provider": "^3.699.0",
+    "@hello-pangea/dnd": "^17.0.0",
     "@hookform/resolvers": "^3.9.1",
     "@prisma/client": "^6.0.1",
     "@radix-ui/react-dialog": "^1.1.2",
@@ -33,7 +34,9 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "unsplash-js": "^7.0.19",
-    "zod": "^3.23.8"
+    "usehooks-ts": "^3.1.0",
+    "zod": "^3.23.8",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",
